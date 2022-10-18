@@ -1,6 +1,16 @@
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Hosting;
+using System.Reflection.PortableExecutable;
+
 var builder = WebApplication.CreateBuilder(args);
 
-builder.WebHost.ConfigureKestrel(options => options.ListenLocalhost(1000));
+//builder.Host.ConfigureWebHostDefaults(webHostBuilder =>
+//{
+//    webHostBuilder.UseUrls("http://*1000");
+//});
+
+
+builder.WebHost.ConfigureKestrel(options => options.ListenAnyIP(1000));
 
 // Add services to the container.
 
