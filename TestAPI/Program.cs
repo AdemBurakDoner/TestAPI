@@ -1,5 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.ConfigureKestrel(options => options.ListenLocalhost(1000));
+
 // Add services to the container.
 
 builder.Services.AddControllers();
